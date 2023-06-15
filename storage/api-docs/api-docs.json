@@ -1,0 +1,358 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My Doc API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/notebooks": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Список",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 4
+                                                    },
+                                                    "Full_name": {
+                                                        "type": "string",
+                                                        "example": "Michael Smith"
+                                                    },
+                                                    "Company": {
+                                                        "type": "string",
+                                                        "example": "DEF Corporation"
+                                                    },
+                                                    "Phone": {
+                                                        "type": "string",
+                                                        "example": "5551234567"
+                                                    },
+                                                    "Email": {
+                                                        "type": "string",
+                                                        "example": "michael@example.com"
+                                                    },
+                                                    "BirthDate": {
+                                                        "type": "string",
+                                                        "example": "1988-05-15"
+                                                    },
+                                                    "Photo": {
+                                                        "type": "string",
+                                                        "example": "base64-encoded-photo2-data"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Создание",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "Full_name": {
+                                                "type": "string",
+                                                "example": "Alice Johnson"
+                                            },
+                                            "Company": {
+                                                "type": "string",
+                                                "example": "XYZ Corporation"
+                                            },
+                                            "Phone": {
+                                                "type": "string",
+                                                "example": "9876543210"
+                                            },
+                                            "Email": {
+                                                "type": "string",
+                                                "example": "alice@example.com"
+                                            },
+                                            "BirthDate": {
+                                                "type": "string",
+                                                "example": "1995-05-15"
+                                            },
+                                            "Photo": {
+                                                "type": "string",
+                                                "example": "base64-encoded-photo-data"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 4
+                                                },
+                                                "Full_name": {
+                                                    "type": "string",
+                                                    "example": "Michael Smith"
+                                                },
+                                                "Company": {
+                                                    "type": "string",
+                                                    "example": "DEF Corporation"
+                                                },
+                                                "Phone": {
+                                                    "type": "string",
+                                                    "example": "5551234567"
+                                                },
+                                                "Email": {
+                                                    "type": "string",
+                                                    "example": "michael@example.com"
+                                                },
+                                                "BirthDate": {
+                                                    "type": "string",
+                                                    "example": "1988-05-15"
+                                                },
+                                                "Photo": {
+                                                    "type": "string",
+                                                    "example": "base64-encoded-photo2-data"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/notebooks/{notebook}": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Еденичная запись",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "ID записи",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 4
+                                                },
+                                                "Full_name": {
+                                                    "type": "string",
+                                                    "example": "Michael Smith"
+                                                },
+                                                "Company": {
+                                                    "type": "string",
+                                                    "example": "DEF Corporation"
+                                                },
+                                                "Phone": {
+                                                    "type": "string",
+                                                    "example": "5551234567"
+                                                },
+                                                "Email": {
+                                                    "type": "string",
+                                                    "example": "michael@example.com"
+                                                },
+                                                "BirthDate": {
+                                                    "type": "string",
+                                                    "example": "1988-05-15"
+                                                },
+                                                "Photo": {
+                                                    "type": "string",
+                                                    "example": "base64-encoded-photo2-data"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Удаление",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "ID записи",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "done"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Обновление",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "ID записи",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "Full_name": {
+                                                "type": "string",
+                                                "example": "Alice Johnson"
+                                            },
+                                            "Company": {
+                                                "type": "string",
+                                                "example": "XYZ Corporation"
+                                            },
+                                            "Phone": {
+                                                "type": "string",
+                                                "example": "9876543210"
+                                            },
+                                            "Email": {
+                                                "type": "string",
+                                                "example": "alice@example.com"
+                                            },
+                                            "BirthDate": {
+                                                "type": "string",
+                                                "example": "1995-05-15"
+                                            },
+                                            "Photo": {
+                                                "type": "string",
+                                                "example": "base64-encoded-photo-data"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 4
+                                                },
+                                                "Full_name": {
+                                                    "type": "string",
+                                                    "example": "Michael Smith"
+                                                },
+                                                "Company": {
+                                                    "type": "string",
+                                                    "example": "DEF Corporation"
+                                                },
+                                                "Phone": {
+                                                    "type": "string",
+                                                    "example": "5551234567"
+                                                },
+                                                "Email": {
+                                                    "type": "string",
+                                                    "example": "michael@example.com"
+                                                },
+                                                "BirthDate": {
+                                                    "type": "string",
+                                                    "example": "1988-05-15"
+                                                },
+                                                "Photo": {
+                                                    "type": "string",
+                                                    "example": "base64-encoded-photo2-data"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
