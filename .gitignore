@@ -1,0 +1,49 @@
+# Игнорировать файлы IDE
+.idea/
+.vscode/
+
+# Игнорировать файлы конфигурации Laravel
+.env
+.env.*
+config/*.php
+
+# Игнорировать зависимости Composer
+vendor/
+composer.lock
+
+# Игнорировать файлы миграций
+database/migrations/*.php
+
+# Игнорировать сгенерированные файлы приложения
+public/css/
+public/js/
+public/mix-manifest.json
+public/storage/
+
+# Игнорировать логи и временные файлы
+storage/logs/
+storage/framework/
+storage/app/*.key
+storage/app/public/
+
+# Игнорировать сессии и кэш фреймворка
+bootstrap/cache/
+
+# Игнорировать тестовые базы данных
+database/testing.sqlite
+
+# Игнорировать директорию сборки JavaScript
+node_modules/
+
+# Игнорировать файлы редакторов
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools/
+.kateproject
+.katesession
+.project
+.tmproj
+.vs/
+*.swp
+*~
